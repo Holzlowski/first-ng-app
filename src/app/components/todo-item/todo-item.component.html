@@ -1,1 +1,13 @@
-<p>todo-item works!</p>
+<!-- Einzelnes Todo-Element -->
+<li appHighlightCompletedTodo [isCompleted]="todo().completed" class="todos__item">
+    <!-- Checkbox für den Status des Todos (completed) -->
+    <!-- Die ID wird dynamisch basierend auf der Todo-ID generiert -->
+    <input id="todo-{{todo().id}}" 
+    type="checkbox" [checked]="todo().completed" 
+    (change)="this.todoClicked()" 
+    />
+
+    <!-- Label für die Checkbox, das den Titel des Todos anzeigt -->
+    <!-- Das Label ist mit der Checkbox über das for-Attribut verknüpft -->
+    <label for="todo-{{todo().id}}">{{todo().title}}</label>
+</li>
